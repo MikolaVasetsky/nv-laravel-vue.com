@@ -11205,40 +11205,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(33),
-  /* template */
-  __webpack_require__(42),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "D:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-a072cd74", Component.options)
-  } else {
-    hotAPI.reload("data-v-a072cd74", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 10 */,
 /* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13545,8 +13512,6 @@ __webpack_require__(35);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(10));
-
 var app = new Vue({
   el: '#app',
   router: __WEBPACK_IMPORTED_MODULE_0__routes_js__["a" /* default */]
@@ -14429,48 +14394,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 33 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-	data: function data() {
-		return {
-			notebooks: []
-		};
-	},
-	mounted: function mounted() {
-		var _this = this;
-
-		// var self=this;
-		// axios.get('/notebook').then(function(response){
-		// 	return self.notebooks = response.data;
-		// })
-		axios.get('notebook').then(function (response) {
-			return _this.notebooks = response.data;
-		});
-	}
-};
-
-/***/ }),
+/* 33 */,
 /* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -14565,17 +14489,21 @@ window.axios.defaults.headers.common = {
 
 var routes = [{
 	path: '/',
-	component: __webpack_require__(10)
+	component: __webpack_require__(58)
 }, {
 	path: '/about',
 	component: __webpack_require__(38)
 }, {
 	path: '/vision',
 	component: __webpack_require__(39)
+}, {
+	path: '/create',
+	component: __webpack_require__(55)
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-	routes: routes
+	routes: routes,
+	linkActiveClass: 'active'
 });
 
 /***/ }),
@@ -16976,7 +16904,7 @@ var Component = __webpack_require__(4)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\About.vue"
+Component.options.__file = "e:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\About.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] About.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17010,7 +16938,7 @@ var Component = __webpack_require__(4)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\Vision.vue"
+Component.options.__file = "e:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\Vision.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Vision.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17089,35 +17017,7 @@ if (false) {
 }
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, _vm._l((_vm.notebooks), function(notebook) {
-    return _c('div', {
-      staticClass: "panel panel-default"
-    }, [_c('div', {
-      staticClass: "panel-heading"
-    }, [_vm._v(_vm._s(notebook.name) + " -by " + _vm._s(notebook.user.name))]), _vm._v(" "), _c('div', {
-      staticClass: "panel-body"
-    }, [_vm._v("\n\t\t\t\t\t" + _vm._s(notebook.body) + "\n\t\t\t\t")])])
-  }))])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-a072cd74", module.exports)
-  }
-}
-
-/***/ }),
+/* 42 */,
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26336,6 +26236,326 @@ module.exports = g;
 __webpack_require__(12);
 module.exports = __webpack_require__(13);
 
+
+/***/ }),
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+	data: function data() {
+		return {
+			notebookData: {
+				name: '',
+				body: ''
+			},
+			errors: {}
+		};
+	},
+
+	methods: {
+		addNotebook: function addNotebook() {
+			var _this = this;
+
+			axios.post('/notebook', this.notebookData).then(function (response) {
+				_this.notebookData = "";
+				_this.errors = "";
+				_this.$router.push('/');
+			}).catch(function (error) {
+				_this.errors = error.response.data;
+			});
+		}
+	},
+	mounted: function mounted() {
+		console.log('Component mounted.');
+	}
+};
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(54),
+  /* template */
+  __webpack_require__(56),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "e:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\Form.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Form.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-48e0e998", Component.options)
+  } else {
+    hotAPI.reload("data-v-48e0e998", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2"
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.addNotebook($event)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": ""
+    }
+  }, [_vm._v("Name")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.notebookData.name),
+      expression: "notebookData.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "",
+      "placeholder": "Name of notebook"
+    },
+    domProps: {
+      "value": (_vm.notebookData.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.notebookData.name = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.errors.name ? _vm.errors.name[0] : ""))])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": ""
+    }
+  }, [_vm._v("Body")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.notebookData.body),
+      expression: "notebookData.body"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "",
+      "placeholder": "Body of notebook"
+    },
+    domProps: {
+      "value": (_vm.notebookData.body)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.notebookData.body = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.errors.body ? _vm.errors.body[0] : ""))])]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_vm._v("Submit")])])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-48e0e998", module.exports)
+  }
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+	data: function data() {
+		return {
+			notebooks: [],
+			loading: false
+		};
+	},
+	mounted: function mounted() {
+		var _this = this;
+
+		// var self=this;
+		// axios.get('/notebook').then(function(response){
+		// 	return self.notebooks = response.data;
+		// })
+		this.loading = true;
+		axios.get('notebook').then(function (response) {
+			_this.notebooks = response.data;
+			_this.loading = false;
+		});
+	}
+};
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(57),
+  /* template */
+  __webpack_require__(59),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "e:\\OpenServer\\domains\\nv-laravel-vue.com\\resources\\assets\\js\\components\\Home.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0faa4c33", Component.options)
+  } else {
+    hotAPI.reload("data-v-0faa4c33", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row pull-right"
+  }, [_c('router-link', {
+    attrs: {
+      "to": "/create"
+    }
+  }, [_c('a', {
+    staticClass: "btn btn-primary"
+  }, [_vm._v("Create Notebook")])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2"
+  }, [(_vm.loading) ? _c('div', [_vm._v("Loading...")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.notebooks), function(notebook) {
+    return _c('div', {
+      staticClass: "panel panel-default"
+    }, [_c('div', {
+      staticClass: "panel-heading"
+    }, [_vm._v(_vm._s(notebook.name))]), _vm._v(" "), _c('div', {
+      staticClass: "panel-body"
+    }, [_vm._v("\n\t\t\t\t\t" + _vm._s(notebook.body) + "\n\t\t\t\t\t-by " + _vm._s(notebook.user.name) + "\n\t\t\t\t")])])
+  })], 2)])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0faa4c33", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

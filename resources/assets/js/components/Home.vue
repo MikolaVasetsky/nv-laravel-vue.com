@@ -9,12 +9,25 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div v-if="loading">Loading...</div>
 				<div class="panel panel-default" v-for="notebook in notebooks">
-					<div class="panel-heading">{{notebook.name}}</div>
 
-					<div class="panel-body">
-						{{notebook.body}}
-						-by {{notebook.user.name}}
-					</div>
+					<div @click="deleteIt(notebook.id)" class="btn pull-right"><i class="fa fa-times"></i></div>
+					<div @click="editIt(notebook.id)" class="btn pull-right"><i class="fa fa-pencil"></i></div>
+
+					<form @submit.prevent="updateIt(notebook.id)">
+						<div class="panel-heading">
+							<strong v-show="!showIt(notebook.id)">{{notebook.name}}</strong>
+							<input style="width:200px;" v-show="showIt(notebook.id)" type="text" class="form-control" v-model="notebookEditDate.name">
+						</div>
+
+						<div class="panel-body">
+							<span v-show="!showIt(notebook.id)">{{notebook.body}}</span>
+							<input v-show="showIt(notebook.id)" type="text" class="form-control" v-model="notebookEditDate.body">
+							-by {{notebook.user.name}}
+						</div>
+
+						<button class="btn btn-primary" type="submit" v-show="showIt(notebook.id)">Ok</button>
+						<button class="btn btn-default" @click.prevent="editForm = false" v-show="showIt(notebook.id)">Cancel</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -26,19 +39,58 @@
 		data() {
 			return {
 				notebooks: [],
-				loading: false
+				loading: false,
+				editForm: '',
+				notebookEditDate: { name:'', body:''}
+			}
+		},
+		methods: {
+			editIt(notebookId) {
+				this.notebooks.forEach((notebook, i) => {
+					if ( notebook.id == notebookId ) {
+						this.notebookEditDate = notebook;
+					}
+				});
+
+				return this.editForm = notebookId;
+			},
+			showIt(notebookId) {
+				if ( this.editForm == notebookId ) {
+					return true;
+				}
+				return false;
+			},
+			updateIt(notebookId) {
+				axios.put('/notebook/'+notebookId, this.notebookEditDate)
+				.then(response=> {
+					console.log(response);
+					this.editForm = false;
+					this.notebookEditDate = '';
+					this.$route.push('/');
+				})
+				.catch(error=> {
+					console.log(error.response);
+				})
+			},
+			deleteIt(notebookId) {
+				let ok = confirm('Are you sure?');
+				if ( ok ) {
+					axios.delete('/notebook/' + notebookId).then(response => {
+						console.log(response);
+						this.fetchIt();
+					});
+				}
+			},
+			fetchIt() {
+				this.loading = true;
+				axios.get('notebook').then((response) => {
+					this.notebooks = response.data;
+					this.loading = false;
+				});
 			}
 		},
 		mounted() {
-			// var self=this;
-			// axios.get('/notebook').then(function(response){
-			// 	return self.notebooks = response.data;
-			// })
-			this.loading = true;
-			axios.get('notebook').then((response) => {
-				this.notebooks = response.data;
-				this.loading = false;
-			});
+			this.fetchIt();
 		}
 	}
 </script>

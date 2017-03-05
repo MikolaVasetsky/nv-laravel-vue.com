@@ -77,9 +77,11 @@ class NotebookController extends Controller
 	 * @param  \App\Notebook  $notebook
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Notebook $notebook)
+	public function update(Notebook $notebook)
 	{
-		//
+		$notebook->update(request()->all());
+
+		return 'success';
 	}
 
 	/**
@@ -90,6 +92,7 @@ class NotebookController extends Controller
 	 */
 	public function destroy(Notebook $notebook)
 	{
-		//
+		$notebook->delete();
+		return 'deleted';
 	}
 }

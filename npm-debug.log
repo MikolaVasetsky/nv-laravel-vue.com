@@ -10,8 +10,8 @@
 6 silly lifecycle @~prewatch: no script for prewatch, continuing
 7 info lifecycle @~watch: @
 8 verbose lifecycle @~watch: unsafe-perm in lifecycle true
-9 verbose lifecycle @~watch: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;d:\OpenServer\domains\nv-laravel-vue.com\node_modules\.bin;D:\openserver\modules\conemu;D:\openserver\modules\conemu\ConEmu;d:\openserver\modules\php\PHP-7\ext;d:\openserver\modules\php\PHP-7\pear;d:\openserver\modules\php\PHP-7\pear\bin;d:\openserver\modules\php\PHP-7;d:\openserver\modules\wget\bin;d:\openserver\modules\database\MySQL-5.7\bin;d:\openserver\modules\http\Apache-PHP-7+Nginx-1.9\bin;d:\openserver\modules\http\Apache-PHP-7+Nginx-1.9;C:\Windows\system32;C:\Windows;C:\Windows\system32\Wbem;D:\OpenServer\modules\php\PHP-7;C:\Program Files\Git\cmd;C:\Program Files\nodejs
-10 verbose lifecycle @~watch: CWD: d:\OpenServer\domains\nv-laravel-vue.com
+9 verbose lifecycle @~watch: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;e:\OpenServer\domains\nv-laravel-vue.com\node_modules\.bin;E:\openserver\modules\conemu\ConEmu\Scripts;E:\openserver\modules\conemu;E:\openserver\modules\conemu\ConEmu;e:\openserver\modules\php\PHP-7.1-x64\ext;e:\openserver\modules\php\PHP-7.1-x64\pear;e:\openserver\modules\php\PHP-7.1-x64\pear\bin;e:\openserver\modules\php\PHP-7.1-x64;e:\openserver\modules\imagemagick;e:\openserver\modules\wget\bin;e:\openserver\modules\git;e:\openserver\modules\git\bin;e:\openserver\modules\git\mingw\bin;e:\openserver\modules\git\cmd;e:\openserver\modules\database\MySQL-5.7-x64\bin;e:\openserver\modules\http\Apache-PHP-7-x64+Nginx-1.10\bin;e:\openserver\modules\http\Apache-PHP-7-x64+Nginx-1.10;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\Wbem;C:\WINDOWS\SysWOW64;C:\Program Files\Git\cmd;C:\Program Files\nodejs;E:\OpenServer\modules\php\PHP-7.1-x64
+10 verbose lifecycle @~watch: CWD: e:\OpenServer\domains\nv-laravel-vue.com
 11 silly lifecycle @~watch: Args: [ '/d /s /c',
 11 silly lifecycle   'node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js' ]
 12 silly lifecycle @~watch: Returned: code: 3221225786  signal: null
@@ -27,7 +27,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:890:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid @
-16 verbose cwd d:\OpenServer\domains\nv-laravel-vue.com
+16 verbose cwd e:\OpenServer\domains\nv-laravel-vue.com
 17 error Windows_NT 10.0.10240
 18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
 19 error node v7.6.0

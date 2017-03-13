@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class NotebookController extends Controller
 {
+
+	public function __construct()
+	{
+		$this->middleware('jwt.auth')->only('index');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *

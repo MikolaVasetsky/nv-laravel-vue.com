@@ -41,7 +41,8 @@
 				notebooks: [],
 				loading: false,
 				editForm: '',
-				notebookEditDate: { name:'', body:''}
+				notebookEditDate: { name:'', body:''},
+				token: localStorage.getItem('token')
 			}
 		},
 		methods: {
@@ -83,13 +84,15 @@
 			},
 			fetchIt() {
 				this.loading = true;
-				axios.get('notebook').then((response) => {
+				axios.get('notebook?token=' + this.token)
+				.then((response) => {
 					this.notebooks = response.data;
 					this.loading = false;
 				});
 			}
 		},
 		mounted() {
+			console.log(this.token);
 			this.fetchIt();
 		}
 	}

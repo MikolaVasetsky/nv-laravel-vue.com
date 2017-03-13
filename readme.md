@@ -49,3 +49,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - php artisan Tinker
 - factory(\App\User::class,2)->create();
 - create notebook in table notebook
+
+
+https://github.com/tymondesigns/jwt-auth/wiki/Installation
+php artisan jwt:generate
